@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class DashboardCardsWidget extends StatelessWidget {
   final String cardName;
-  final Image cardImage;
+  final String cardImage;
 
   const DashboardCardsWidget(
       {Key? key, required this.cardName, required this.cardImage})
@@ -11,11 +11,14 @@ class DashboardCardsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.black,
+      color: Colors.white,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          SizedBox(
+            child: Image.asset(cardImage),
+          ),
           const SizedBox(height: 5),
           RichText(
             text: TextSpan(
@@ -23,8 +26,8 @@ class DashboardCardsWidget extends StatelessWidget {
                 TextSpan(
                   text: cardName.toUpperCase(),
                   style: const TextStyle(
-                      letterSpacing: 10.0,
-                      color: Colors.white,
+                      letterSpacing: 16.0,
+                      color: Colors.black,
                       fontWeight: FontWeight.w500,
                       fontSize: 16),
                 ),
