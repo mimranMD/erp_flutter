@@ -1,10 +1,8 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class DashboardCardsWidget extends StatelessWidget {
   final String cardName;
-  final ImageData cardImage;
+  final Image cardImage;
 
   const DashboardCardsWidget(
       {Key? key, required this.cardName, required this.cardImage})
