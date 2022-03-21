@@ -17,19 +17,22 @@ class DashboardCardsWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           SizedBox(
-            child: Image.asset(cardImage),
+            child: Image.asset(
+              cardImage,
+              width: 70,
+            ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: 10),
           RichText(
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: cardName.toUpperCase(),
+                  text: cardName,
                   style: const TextStyle(
-                      letterSpacing: 16.0,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16),
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ],
             ),
