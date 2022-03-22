@@ -2,7 +2,7 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import 'Views/auth/login_page.dart';
+import 'Views/home/dashboard_detail.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       builder: DevicePreview.appBuilder,
       theme: ThemeData(fontFamily: 'Roboto'),
       debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
+      home: const DashboardDetailPage(),
     );
   }
 }

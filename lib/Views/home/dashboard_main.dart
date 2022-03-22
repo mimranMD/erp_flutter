@@ -1,8 +1,8 @@
-import '../financialDashboard/financial_dashboard.dart';
 import 'package:flutter/material.dart';
 
 import '../../Models/m_dashboard_img.dart';
 import '../../Widgets/r_dashboard_cards.dart';
+import 'dashboard_detail.dart';
 
 class DashboardPageMain extends StatefulWidget {
   const DashboardPageMain({Key? key}) : super(key: key);
@@ -85,7 +85,7 @@ class _DashboardPageMainState extends State<DashboardPageMain> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const FinancialDashBoard(),
+                              builder: (context) => const DashboardDetailPage(),
                             ),
                           );
                         },
