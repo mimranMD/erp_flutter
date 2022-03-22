@@ -26,7 +26,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      margin: const EdgeInsets.symmetric(horizontal: 45),
       decoration: BoxDecoration(
           color: buttonColor ?? Colors.white,
           border: Border.all(color: borderColor ?? Colors.white),
@@ -42,8 +42,8 @@ class CustomButton extends StatelessWidget {
                 buttonText,
                 style: TextStyle(
                     color: textColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700),
               ),
             ),
           ),

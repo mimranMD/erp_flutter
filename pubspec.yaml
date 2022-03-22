@@ -18,7 +18,7 @@ dependencies:
   fluttertoast: ^8.0.9
   provider: ^6.0.2
   google_fonts: ^2.3.1
-
+  flutter_switch: ^0.3.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -29,3 +29,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/dash/
+  
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Medium.ttf
