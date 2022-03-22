@@ -58,8 +58,8 @@ class _DashboardPageMainState extends State<DashboardPageMain> {
           decoration: BoxDecoration(
             color: Colors.amber.shade300,
             borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
+              topLeft: Radius.circular(25),
+              topRight: Radius.circular(25),
             ),
           ),
           child: ScrollConfiguration(
@@ -67,12 +67,12 @@ class _DashboardPageMainState extends State<DashboardPageMain> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(height: deviceHeight * 0.06),
+                  SizedBox(height: deviceHeight * 0.03),
                   GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 3 / 2,
+                      childAspectRatio: 2.6 / 2,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 20,
                     ),
