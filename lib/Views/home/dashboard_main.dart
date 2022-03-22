@@ -25,8 +25,6 @@ class _DashboardPageMainState extends State<DashboardPageMain> {
         centerTitle: true,
         toolbarHeight: 120,
         title: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -65,6 +63,7 @@ class _DashboardPageMainState extends State<DashboardPageMain> {
           child: ScrollConfiguration(
             behavior: const ScrollBehavior().copyWith(overscroll: false),
             child: SingleChildScrollView(
+              physics: const AlwaysScrollableScrollPhysics(),
               child: Column(
                 children: [
                   SizedBox(height: deviceHeight * 0.03),
@@ -77,6 +76,7 @@ class _DashboardPageMainState extends State<DashboardPageMain> {
                       mainAxisSpacing: 20,
                     ),
                     padding: const EdgeInsets.symmetric(horizontal: 13),
+                    physics: const ScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: dashboardImageModel.length,
                     itemBuilder: (BuildContext context, index) {
