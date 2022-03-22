@@ -1,3 +1,4 @@
+import 'package:erp_flutter/Views/home/profit_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
@@ -55,9 +56,17 @@ class _DashboardDetailPageState extends State<DashboardDetailPage> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
-            child: Image.asset(
-              'assets/dash/alarm.png',
-              width: 23,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProfitScreen()),
+                );
+              },
+              child: Image.asset(
+                'assets/dash/alarm.png',
+                width: 23,
+              ),
             ),
           ),
         ],
@@ -116,7 +125,7 @@ class _DashboardDetailPageState extends State<DashboardDetailPage> {
                     ),
                   ),
                 ),
-                SfSparkBarChart(),
+                // SfSparkBarChart(),
               ],
             ),
           ),
