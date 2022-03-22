@@ -1,5 +1,5 @@
-import 'package:erp_flutter/Views/home/dashboard_main.dart';
-import 'package:erp_flutter/Widgets/r_custom_button.dart';
+import '../home/dashboard_main.dart';
+import '../../Widgets/r_custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
@@ -142,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Image.asset('assets/dash/logo.png', width: deviceWidth * .8),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   const Text(
                     "Al Burhan ERP ",
                     style: TextStyle(
