@@ -1,6 +1,6 @@
 import 'package:erp_flutter/Views/home/profit_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
 class DashboardDetailPage extends StatefulWidget {
   const DashboardDetailPage({Key? key}) : super(key: key);
@@ -70,10 +70,8 @@ class _DashboardDetailPageState extends State<DashboardDetailPage> {
             ),
           ),
         ],
-        title: Expanded(
-          child: Image.asset(
-            'assets/dash/logo.png',
-          ),
+        title: Image.asset(
+          'assets/dash/logo.png',
         ),
       ),
       body: SizedBox(
@@ -97,35 +95,34 @@ class _DashboardDetailPageState extends State<DashboardDetailPage> {
                   ),
                 ),
                 SizedBox(
-                  child: Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SizedBox(
-                          child: Column(
-                            children: [
-                              _title('Total Money Invested', 0.9,
-                                  Colors.grey.shade500),
-                              _subHeading('OMR 31,0912', 1.8, Colors.black,
-                                  FontWeight.w600),
-                            ],
-                          ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      SizedBox(
+                        child: Column(
+                          children: [
+                            _title('Total Money Invested', 0.9,
+                                Colors.grey.shade500),
+                            _subHeading('OMR 31,0912', 1.8, Colors.black,
+                                FontWeight.w600),
+                          ],
                         ),
-                        SizedBox(
-                          child: Column(
-                            children: [
-                              _title(
-                                  'Repayment done', 0.9, Colors.grey.shade500),
-                              _subHeading('OMR 0.00000', 1.8, Colors.black,
-                                  FontWeight.w600),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        child: Column(
+                          children: [
+                            _title(
+                                'Repayment done', 0.9, Colors.grey.shade500),
+                            _subHeading('OMR 0.00000', 1.8, Colors.black,
+                                FontWeight.w600),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                // SfSparkBarChart(),
+      //             StackedBarChart(  seriesList,
+      // animate: animate,)
               ],
             ),
           ),
@@ -140,4 +137,83 @@ class _SalesData {
 
   final String year;
   final double sales;
+}
+class StackedBarChart extends StatelessWidget {
+final List<charts.Series<dynamic, String>> seriesList;
+  final bool animate;
+
+  // ignore: use_key_in_widget_constructors
+  const StackedBarChart( this.seriesList, {required this.animate});
+
+  /// Creates a stacked [BarChart] with sample data and no transition.
+  factory StackedBarChart.withSampleData() {
+    return  StackedBarChart(
+      _createSampleData(),
+      // Disable animations for image tests.
+      animate: false,
+    );
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return  charts.BarChart(
+      seriesList,
+      animate: animate,
+      barGroupingType: charts.BarGroupingType.stacked,
+    );
+  }
+
+  /// Create series list with multiple series
+  static List<charts.Series<OrdinalSales, String>> _createSampleData() {
+    final desktopSalesData = [
+      OrdinalSales('2014', 5),
+       OrdinalSales('2015', 25),
+       OrdinalSales('2016', 100),
+       OrdinalSales('2017', 75),
+    ];
+
+    final tableSalesData = [
+       OrdinalSales('2014', 25),
+       OrdinalSales('2015', 50),
+       OrdinalSales('2016', 10),
+       OrdinalSales('2017', 20),
+    ];
+
+    final mobileSalesData = [
+       OrdinalSales('2014', 10),
+       OrdinalSales('2015', 15),
+       OrdinalSales('2016', 50),
+       OrdinalSales('2017', 45),
+    ];
+
+    return [
+       charts.Series<OrdinalSales, String>(
+        id: 'Desktop',
+        domainFn: (OrdinalSales sales, _) => sales.year,
+        measureFn: (OrdinalSales sales, _) => sales.sales,
+        data: desktopSalesData,
+      ),
+       charts.Series<OrdinalSales, String>(
+        id: 'Tablet',
+        domainFn: (OrdinalSales sales, _) => sales.year,
+        measureFn: (OrdinalSales sales, _) => sales.sales,
+        data: tableSalesData,
+      ),
+       charts.Series<OrdinalSales, String>(
+        id: 'Mobile',
+        domainFn: (OrdinalSales sales, _) => sales.year,
+        measureFn: (OrdinalSales sales, _) => sales.sales,
+        data: mobileSalesData,
+      ),
+    ];
+  }
+}
+
+/// Sample ordinal data type.
+class OrdinalSales {
+  final String year;
+  final int sales;
+
+  OrdinalSales(this.year, this.sales);
 }
