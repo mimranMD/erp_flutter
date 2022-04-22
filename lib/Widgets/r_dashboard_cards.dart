@@ -19,7 +19,7 @@ class DashboardCardsWidget extends StatelessWidget {
           SizedBox(
             child: Image.asset(
               cardImage,
-              width: 70,
+               height: 70,
             ),
           ),
           const SizedBox(height: 10),

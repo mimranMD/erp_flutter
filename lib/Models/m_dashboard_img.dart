@@ -1,12 +1,14 @@
 const List dashboardImageModel = [
-  {"img": "assets/dash/dash_img_01.png"},
-  {"img": "assets/dash/dash_img_02.png"},
-  {"img": "assets/dash/dash_img_03.png"},
-  {"img": "assets/dash/dash_img_04.png"},
-  {"img": "assets/dash/dash_img_05.png"},
-  {"img": "assets/dash/dash_img_06.png"},
-  {"img": "assets/dash/dash_img_07.png"},
-  {"img": "assets/dash/dash_img_08.png"},
+  {"img": "assets/dash/Facilities.png"},
+  {"img": "assets/dash/Finance.png"},
+  {"img": "assets/dash/HRMS.png"},
+  {"img": "assets/dash/IT.png"},
+   {"img": "assets/dash/ITS.png"},
+  {"img": "assets/dash/PMS.png"},
+  {"img": "assets/dash/Procurement.png"},
+  {"img": "assets/dash/Tendering.png"},
+  {"img": "assets/dash/Transport.png"},
+  {"img": "assets/dash/Transport.png"},
 ];
 
 const List dashboardTextModel = [
